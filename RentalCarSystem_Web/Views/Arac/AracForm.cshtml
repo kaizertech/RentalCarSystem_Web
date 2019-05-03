@@ -1,0 +1,85 @@
+﻿@*@model PersonelMVCUI.Models.EntityFramework.Kullanici*@
+
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Araç</h2>
+
+@using (Html.BeginForm("Kaydet", "Arac", FormMethod.Post))
+{
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+    <h4>Araç</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Sirket_id, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Sirket_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sirket_id, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_Ad, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_Ad, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_Ad, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_Model, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_Model, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_Model, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_GunlukKmSiniri, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_GunlukKmSiniri, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_GunlukKmSiniri, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_BagajHacmi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_BagajHacmi, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_BagajHacmi, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_KoltukSayisi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_KoltukSayisi, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_KoltukSayisi, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Araba_GunlukKira, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Araba_GunlukKira, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Araba_GunlukKira, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="radio">
+        <label>
+            @*@Html.RadioButtonFor(model => model.Araba_AirBag, true)AirBag Var*@
+        </label>
+        <label>
+            @*@Html.RadioButtonFor(model => model.Araba_AirBag, false)AirBag Yok*@
+        </label>
+        @*@Html.ValidationMessageFor(model => model.Araba_AirBag)*@
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Kaydet" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}

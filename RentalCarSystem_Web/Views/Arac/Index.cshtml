@@ -1,0 +1,49 @@
+﻿@*
+    @using PersonelMVCUI.Models.EntityFramework      entity çağır
+    @model List<Departman>
+*@
+
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Arac/Yeni">Yeni Araç</a>
+<h2>Araç Listesi</h2>
+
+<table class="table table-bordered" id="tblAraclar">
+    <thead>
+        <tr>
+            <th>Araba ID</th>
+            <th>Sirket ID</th>
+            <th>Adı</th>
+            <th>Model</th>
+            <th>Günlük Km Sınırı</th>
+            <th>AirBag</th>
+            <th>Bagaj Hacmi</th>
+            <th>Koltuk Sayısı</th>
+            <th>Günlük Kira</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var arac in Model)
+            {*@
+        <tr>
+            <td>@*@arac.Araba_ID*@</td>
+            <td>@*@arac.Sirket_id*@</td>
+            <td>@*@arac.Araba_Ad*@</td>
+            <td>@*@arac.Araba_Model*@</td>
+            <td>@*@arac.Araba_GunlukKmSiniri*@</td>
+            <td>@*@arac.Araba_AirBag*@</td>
+            <td>@*@arac.Araba_BagajHacmi*@</td>
+            <td>@*@arac.Araba_KoltukSayisi*@</td>
+            <td>@*@arac.Araba_GunlukKira*@</td>
+            <td><a class="btn btn-primary" href="/Arac/Guncelle/<td>@*@arac.Araba_ID*@">Güncelle</a></td>
+            <td><a class="btn btn-warning" href="/Arac/Sil/<td>@*@arac.Araba_ID*@">Sil</a></td>
+        </tr>
+        @*}*@
+    </tbody>
+</table>

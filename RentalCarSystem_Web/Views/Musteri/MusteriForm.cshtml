@@ -1,0 +1,62 @@
+﻿@*@model PersonelMVCUI.Models.EntityFramework.Kullanici*@
+
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Müşteri</h2>
+
+@using (Html.BeginForm("Kaydet","Musteri",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Kullanici</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Musteri_Ad, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Musteri_Ad, new { htmlAttributes = new { @class = "form-control" } })
+              @Html.ValidationMessageFor(model => model.Musteri_Ad, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Musteri_Soyad, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Musteri_Soyad, new { htmlAttributes = new { @class = "form-control" } })
+              @Html.ValidationMessageFor(model => model.Musteri_Soyad, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Musteri_TC, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Musteri_TC, new { htmlAttributes = new { @class = "form-control" } })
+              @Html.ValidationMessageFor(model => model.Musteri_TC, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Musteri_KullaniciAdi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Musteri_KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+              @Html.ValidationMessageFor(model => model.Musteri_KullaniciAdi, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Musteri_Sifre, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Musteri_Sifre, new { htmlAttributes = new { @class = "form-control" } })
+              @Html.ValidationMessageFor(model => model.Musteri_Sifre, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @*  @Html.HiddenFor(m=> m.Id)   burada id saklanıyor.  Sonra kullanılacak *@   
+            <input type="submit" value="Kaydet" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}

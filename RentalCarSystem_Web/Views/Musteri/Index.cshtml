@@ -1,0 +1,43 @@
+﻿@*
+    @using PersonelMVCUI.Models.EntityFramework      entity çağır
+    @model List<Departman>
+*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Musteri/Yeni">Yeni Müşteri</a>
+<h2>Müşteri Listesi</h2>
+
+<table class="table table-bordered" id="tblMusteriler">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Müşteri Adı</th>
+            <th>Müşteri Soyadı</th>
+            <th>Müşteri TC</th>
+            <th>Kullanıcı Adı</th>
+            <th>Kullanıcı Sifre</th>
+            <th>Güncelleme</th>
+            <th>Silme</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var costumers in Model)
+            {*@
+        <tr>
+            <td>@*@costumers.Musteri_ID*@</td>
+            <td>@*@costumers.Musteri_Ad*@</td>
+            <td>@*@costumers.Musteri_Soyad*@</td>
+            <td>@*@costumers.Musteri_TC*@</td>
+            <td>@*@costumers.Musteri_KullaniciAdi*@</td>
+            <td>@*@costumers.Musteri_Sifre*@</td>
+            <td><a class="btn btn-primary" href="/Musteri/Guncelle/<td>@*@costumers.Musteri_ID*@">Güncelle</a></td>
+            <td><a class="btn btn-warning" href="/Musteri/Sil/<td>@*@costumers.Musteri_ID*@">Sil</a></td>
+        </tr>
+        @*}*@
+    </tbody>
+</table>

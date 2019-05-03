@@ -1,0 +1,116 @@
+﻿@*
+    @using PersonelMVCUI.Models.EntityFramework      entity çağır
+    @model List<Departman>
+*@
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Kiralama/Yeni">Yeni Kiralama</a>
+<h2>Kiralama Listesi</h2>
+
+<table class="table table-bordered" id="tblKiralamalar">
+    <thead>
+        <tr>
+            <th>Kiralama ID</th>
+            <th>Araba ID</th>
+            <th>Müşteri ID</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Veriliş Km</th>
+            <th>Alış Km</th>
+            <th>Ücret</th>
+            <th>Created Date</th>
+            <th>Update Date</th>
+            <th>Delete Date</th>
+            <th>IsActive</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var kiralama in Model)
+            {*@
+        <tr>
+            <td>@*@kiralama.Kiralama_ID*@</td>
+            <td>@*@kiralama.Musteri_id*@</td>
+            <td>@*@kiralama.Araba_id*@</td>
+            <td>@*@kiralama.BaslangicTarihi*@</td>
+            <td>@*@kiralama.BitisTarihi*@</td>
+            <td>@*@kiralama.VerilisKM*@</td>
+            <td>@*@kiralama.AlisKm*@</td>
+            <td>@*@kiralama.Ucret*@</td>
+            <td>@*@kiralama.CreatedDate*@</td>
+            <td>@*@kiralama.UpdateDate*@</td>
+            <td>@*@kiralama.DeleteDate*@</td>
+            <td>@*@kiralama.IsActive*@</td>
+        </tr>
+        @*}*@
+    </tbody>
+</table>
+
+@using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.Musteri_id)
+            @Html.TextBoxFor(m => m.Musteri_id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Musteri_id)*@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.Arac_id)
+            @Html.TextBoxFor(m => m.Arac_id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Arac_id)*@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.BaslangicTarihi)
+            @Html.TextBoxFor(m => m.BaslangicTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
+            @Html.ValidationMessageFor(m => m.BaslangicTarihi) *@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.BitisTarihi)
+            @Html.TextBoxFor(m => m.BitisTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
+            @Html.ValidationMessageFor(m => m.BitisTarihi) *@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.VerilisKM)
+            @Html.TextBoxFor(m => m.VerilisKM, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.VerilisKM)*@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.AlisKm)
+            @Html.TextBoxFor(m => m.AlisKm, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.AlisKm)*@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.CreatedDate)
+            @Html.TextBoxFor(m => m.CreatedDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
+            @Html.ValidationMessageFor(m => m.CreatedDate) *@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.UpdateDate)
+            @Html.TextBoxFor(m => m.UpdateDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
+            @Html.ValidationMessageFor(m => m.UpdateDate) *@
+    </div>
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.DeleteDate)
+            @Html.TextBoxFor(m => m.DeleteDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
+            @Html.ValidationMessageFor(m => m.DeleteDate) *@
+    </div>
+    <div class="checkbox">
+        <label>
+            @*@Html.CheckBoxFor(m => m.IsActive) IsActive ise seçiniz*@
+        </label>
+    </div>
+    @*@Html.HiddenFor(m => m.Personel.Id)*@
+    <button type="submit" class="btn btn-default">Kaydet</button>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
